@@ -1,0 +1,33 @@
+{
+  "name": "node-redis",
+  "version": "1.0.0",
+  "description": "Nodejs server with Redis as cache",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=lcov --reporter=text-summary --reporter=json-summary mocha --exit --timeout=3000 test/unit --recursive",
+    "test:int": "NODE_ENV=test nyc --reporter=html --reporter=text-summary --reporter=json-summary node_modules/mocha/bin/mocha --exit --timeout=20000 test/integration --recursive"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "redis",
+    "cache",
+    "message",
+    "broker"
+  ],
+  "author": "Afshan Aman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11",
+    "nyc": "^14.0.0",
+    "sinon": "^7.3.2",
+    "supertest": "^4.0.2"
+  }
+}
